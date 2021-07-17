@@ -11,3 +11,13 @@ body {
 
 /* Header */
 
+.hero-Page{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* Slider 3 / 4 */
+
+.slider-3{
+    height: 100px !important;
+}
