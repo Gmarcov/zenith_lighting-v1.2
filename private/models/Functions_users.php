@@ -25,3 +25,16 @@ function insert_user($con, $query, ...$vars)
     $stmt->close();
     return -1;
 }
+
+function authentication($con, $query, $email)
+{
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('s', $email);
+    if ($stmt->execute()) {
+        $res = $stmt->get_result();
+        $stmt->close();
+        return $res;
+    }
+    $stmt->close();
+    return false;
+}
