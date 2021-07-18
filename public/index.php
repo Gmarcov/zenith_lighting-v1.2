@@ -27,7 +27,7 @@ require_once "../private/models/Tokens.php";
         rel="stylesheet">
 
     <!-- Title -->
-    <title>Zenith</title>
+    <title>Zenith Lighting</title>
 </head>
 
 <body>
@@ -38,16 +38,11 @@ require_once "../private/models/Tokens.php";
 
         <!-- Navbar -->
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img class="header-Logo" src="../src/img/logo.svg"
-                        alt="Logo Zenith"></a>
-
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+                <a class="navbar-brand" href="#">
+                    <img class="header-Logo" src="../src/img/logo.svg"alt="Logo Zenith">
+                </a>
 
                 <!-- Search -->
 
@@ -70,9 +65,10 @@ require_once "../private/models/Tokens.php";
                     </div>
                 </div>
 
-                <!-- Icons -->
+                <!-- Account & Cart -->
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-Icon">
+                    <!-- Account -->
                     <li class="nav-item">
                         <a href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="#374151"
@@ -81,18 +77,49 @@ require_once "../private/models/Tokens.php";
                             </svg>
                         </a>
                     </li>
-                    <li class="nav-item cart">
+                    <!-- Cart -->
+                    <li class="nav-item cart dropdown">
                         <span class="cart-number">1</span>
-                        <a href="">
+                        <a class="" href="" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#374151"
                                 class="bi bi-bag" viewBox="0 0 16 16">
                                 <path
                                     d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                             </svg>
                         </a>
+
+                        <ul class="dropdown-menu cart-dropdown" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li>Panier vide</li>
+                        </ul>
                     </li>
                 </ul>
                 <!-- </div> -->
+            </div>
+        </nav>
+
+        <!-- Bottom Nav -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light container bot-nav">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Catégorie</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Services
+                </span>
+                </div>
             </div>
         </nav>
 
@@ -110,73 +137,9 @@ require_once "../private/models/Tokens.php";
         <!-- Landing Page -->
 
         <section class="hero-Page">
-
             <div class="container">
 
-                <div class="row">
-
-                    <!-- Big poster Carousel -->
-
-                    <!-- <div class="col-7">
-                  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="../src/img/hero/lamp1.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>First slide label</h5>
-                          <p>Some representative placeholder content for the first slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="../src/img/hero/lamp2.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Second slide label</h5>
-                          <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="../src/img/hero/lamp2.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5>Third slide label</h5>
-                          <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="col-5 col-md-12 container">
-
-                  <div class="row">
-                    <img src="../src/img/hero/lamp1.jpg" alt="" style="height: 250px;">
-                  </div>
-
-                  <div class="row">
-                    <div class="col-2 col-md-12 slider-3">
-                      <img src="../src/img/hero/lamp1.jpg" alt="">
-                    </div>
-                    <div class="col-2 slider-2">
-                      <img src="../src/img/hero/lamp4.jpg" alt="">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div> -->
-
+                <!-- Big poster Carousel -->
                     <div class="row">
 
                         <!--Grid column-->
@@ -239,21 +202,8 @@ require_once "../private/models/Tokens.php";
 
                         </div>
 
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <!-- <div class="col-lg-4 col-md-6 mb-4">
-        
-                <img src="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(77).jpg" class="img-fluid mb-4" alt=""
-                  data-wow-delay="0.2s">
-        
-                <img src="http://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(67).jpg" class="img-fluid mb-4" alt=""
-                  data-wow-delay="0.5s">
-        
-              </div> -->
-                        <!--Grid column-->
-
                     </div>
+            </div> 
         </section>
 
     </header>

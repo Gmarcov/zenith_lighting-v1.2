@@ -3,8 +3,14 @@
 /* Logo */
 
 .header-Logo {
-  padding-left: 50%;
+  padding-left: 20px;
   height: 40px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header-Logo{
+    padding-left: 20%;
+  }
 }
 
 @media only screen and (max-width: 600px){
@@ -37,18 +43,24 @@
   }
 }
 
-/* Icons */
+/* Account */
 
 .bi-person-fill {
-  margin-right: 20px;
+  margin-right: 15px;
 }
+
+/* Cart */
 
 .cart {
   position: relative;
 }
 
+.cart span{
+  cursor: pointer;
+}
+
 .bi-bag {
-  margin-right: 100px;
+  margin-right: 20px;
 }
 
 .cart-number {
@@ -59,6 +71,12 @@
   font-weight: 700;
   background-color: rgb(255, 208, 0);
   border-radius: 100%;
+  text-align: center;
+}
+
+.cart-dropdown{
+  transform: translateX(-70px);
+  padding: 5% 0 5% 0;
   text-align: center;
 }
 
@@ -75,7 +93,7 @@
     }
 
     .navbar-Icon{
-        margin-left: 120px;
+        margin-left: 0px;
         display: inline;
         white-space: nowrap;
         float: right;
@@ -91,4 +109,16 @@
     .bi-person-fill{
         margin-right: 5px !important;
     }
+}
+
+/* Bot Navbar */
+
+/* .bot-nav{
+  background-color: #DFDFDF;
+} */
+
+
+
+.bot-nav-div .nav-link{
+  padding: 0 40px 0 20px;
 }
