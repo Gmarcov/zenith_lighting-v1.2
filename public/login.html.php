@@ -5,6 +5,10 @@ if (isset($_SESSION['signup'])) {
     print_r($_SESSION['signup']);
     unset($_SESSION['signup']);
 }
+if (isset($_SESSION['name'])) {
+    echo "bonjour $_SESSION[name]";
+}
+
 ?>
 
 <!DOCTYPE html>

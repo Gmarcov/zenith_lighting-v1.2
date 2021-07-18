@@ -1,10 +1,9 @@
 <?php
 session_start();
-
-$errors = [];
+require_once "../models/Database_Connection.php";
+require_once "../models/Functions_users.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    require_once "../models/Database_Connection.php";
-    require_once "../models/Functions_users.php";
+
     $errors = [];
     if (isset($_POST['signin'])) { // Signin
         // Get post infos 
@@ -18,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else if (!checkdnsrr(substr($_POST['email'], strpos($_POST['email'], '@') + 1), 'MX')) { // Check dns of th email
             $errors[] = "Invalid email DNS";
         }
-
         if (count($errors) == 0) {
             // Check if user exists
             $con = connect();
@@ -28,10 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // check if password match
                 $hash = password_hash($password, PASSWORD_DEFAULT);
                 $data = $result->fetch_assoc();
-                // print_r($res);
-                print_r($data);
                 if (password_verify($password, $data['user_password'])) {
                     $errors = "User signed in";
+                    // Stocker name dans une session
+                    // Stocker id dans un cookie pour la connexion automatique
+                    $_SESSION['name'] = $data['fullName'];
+                    setcookie('id', $data['user_id'], time() + 3600 * 24 * 365);
+                    // $_COOKIE['id'] = $data['user_id'];
                 } else {
                     // Authentication succeded
                     $errors[] = "Wrong password!! Try again";
@@ -41,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
     } elseif (isset($_POST['signup'])) { // Sign up
+        $errors = [];
         // Get post infos
         $fullName = $_POST['fullName'];
         $email = $_POST['email'];
@@ -90,6 +92,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $_SESSION['signup'] = $errors;
     header('Location: ../../public/login.html.php');
-} else {
-    // Il ne s'git ni de signin ni signup => Redirection vers une page ?
+} elseif (isset($_COOKIE['id'])) {
+    // Connexion automatique
+    $con = connect();
+    $result = fetch_data_id($con, 'SELECT * FROM tutilisateurs WHERE user_id=?', $_COOKIE['id']);
+    if ($result && $result->num_rows != 0) {
+        // Stocker le nom dans une session plus redirection
+        $data = $result->fetch_assoc();
+        $_SESSION['name'] = $data['fullName'];
+        header('Location: ../../public/login.html.php');
+    }
 }

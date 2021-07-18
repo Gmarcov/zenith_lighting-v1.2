@@ -38,3 +38,16 @@ function authentication($con, $query, $email)
     $stmt->close();
     return false;
 }
+
+function fetch_data_id($con, $query, $id)
+{
+    $stmt = $con->prepare($query);
+    $stmt->bind_param('i', $id);
+    if ($stmt->execute()) {
+        $res = $stmt->get_result();
+        $stmt->close();
+        return $res;
+    }
+    $stmt->close();
+    return false;
+}
