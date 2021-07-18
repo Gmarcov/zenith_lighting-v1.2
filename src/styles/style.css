@@ -12,12 +12,21 @@ body {
 /* Header */
 
 .hero-Page{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
 }
 
-/* Slider 3 / 4 */
+/* product Categorie */
 
-.slider-3{
-    height: 100px !important;
+.product-Categorie{
+    margin-bottom: 100px;
+}
+
+.product-Categorie-Title{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(59, 59, 59);
+    font-weight: 500;
+}
+
+.product-Categorie-Title h5{
+    font-weight: 400;
 }

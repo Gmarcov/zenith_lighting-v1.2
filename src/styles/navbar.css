@@ -113,11 +113,21 @@
 
 /* Bot Navbar */
 
-/* .bot-nav{
-  background-color: #DFDFDF;
-} */
+.bot-nav{
+  background-color: #f8f8f8 !important;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.15) !important;
+}
 
+.bot-nav-Categorie{
+  font-size: 17px;
+  font-weight: 700;
+}
 
+.bot-nav li{
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(29, 29, 29) !important;
+}
 
 .bot-nav-div .nav-link{
   padding: 0 40px 0 20px;
