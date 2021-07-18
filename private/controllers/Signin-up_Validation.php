@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Hundle user input
         if (!isset($_POST['email']) || strlen($_POST['email']) > 400 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // Hundle email errors
             $errors[] =  "Invalid email entered";
-        } else if (!checkdnsrr(substr($_POST['email'], strpos($_POST['email'], '@') + 1), 'MX')) { // Check dns of th email
+        } else if (!checkdnsrr(substr($_POST['email'], strpos($_POST['email'], '@') + 1), 'MX')) { // Check dns of the email
             $errors[] = "Invalid email DNS";
         }
         if (count($errors) == 0) {
@@ -31,7 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Stocker name dans une session
                     // Stocker id dans un cookie pour la connexion automatique
                     $_SESSION['name'] = $data['fullName'];
-                    setcookie('id', $data['user_id'], time() + 3600 * 24 * 365);
+                    $id = $data['user_id'];
+                    setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
                     // $_COOKIE['id'] = $data['user_id'];
                 } else {
                     // Authentication succeded
@@ -92,14 +93,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $_SESSION['signup'] = $errors;
     header('Location: ../../public/login.html.php');
-} elseif (isset($_COOKIE['id'])) {
+} elseif (isset($_COOKIE['user_id'])) {
     // Connexion automatique
     $con = connect();
-    $result = fetch_data_id($con, 'SELECT * FROM tutilisateurs WHERE user_id=?', $_COOKIE['id']);
+    $result = fetch_data_id($con, 'SELECT * FROM tutilisateurs WHERE user_id=?', $_COOKIE['user_id']);
     if ($result && $result->num_rows != 0) {
         // Stocker le nom dans une session plus redirection
         $data = $result->fetch_assoc();
         $_SESSION['name'] = $data['fullName'];
         header('Location: ../../public/login.html.php');
     }
+} else {
+    header('Location: ../../index.php');
 }
