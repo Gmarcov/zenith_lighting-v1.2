@@ -5,6 +5,10 @@ if (isset($_SESSION['signup'])) {
     print_r($_SESSION['signup']);
     unset($_SESSION['signup']);
 }
+if (isset($_SESSION['name'])) {
+    echo "bonjour $_SESSION[name]";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +25,8 @@ if (isset($_SESSION['signup'])) {
 <body>
     <h1>Sign in</h1>
     <form action="../private/controllers/Signin-up_Validation.php" method="post" id="in">
-        <label for="">Full Name</label> <input type="text" name="fullName" placeholder="Fullname*" required>
-        <label for="">Email</label> <input type="email" name="email" placeholder="example@mail.com" required>
+        <label for="">email</label> <input type="email" name="email" placeholder="email@example.com*" required>
+        <label for="">Password</label> <input type="password" name="password" placeholder="********" required>
         <input type="submit" name="signin" value="Submit">
     </form>
     <h1>Sign up</h1>
