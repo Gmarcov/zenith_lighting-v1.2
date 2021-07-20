@@ -1204,7 +1204,7 @@ require_once "../private/models/Tokens.php";
           </div>
           <!-- Product-->
           <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
-            <div class="card product-card"><span class="badge bg-danger badge-shadow">Sale</span>
+            <div class="card product-card"><span class="badge bg-danger badge-shadow">Promo</span>
               <div class="product-card-actions d-flex align-items-center"><a class="btn-action nav-link-style me-2" href="#"><i class="ci-compare me-1"></i>Compare</a>
                 <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button>
               </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img src="../src/img/shop/catalog/59.jpg" alt="Product"></a>
@@ -1308,7 +1308,7 @@ require_once "../private/models/Tokens.php";
           </div>
           <!-- Product-->
           <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
-            <div class="card product-card"><span class="badge bg-info badge-shadow">New</span>
+            <div class="card product-card"><span class="badge bg-info badge-shadow">Nouveau</span>
               <div class="product-card-actions d-flex align-items-center"><a class="btn-action nav-link-style me-2" href="#"><i class="ci-compare me-1"></i>Compare</a>
                 <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button>
               </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img src="../src/img/shop/catalog/64.jpg" alt="Product"></a>
