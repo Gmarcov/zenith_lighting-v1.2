@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Stocker le nom dans une session plus redirection
         $data = $result->fetch_assoc();
         $_SESSION['name'] = $data['fullName'];
-        header('Location: ../../public/login.html.php');
+        header('Location: ../../public/index.php');
     }
 } else {
     header('Location: ../../index.php');
