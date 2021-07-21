@@ -29,8 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Stocker name dans une session
                     // Stocker id dans un cookie pour la connexion automatique
                     $_SESSION['name'] = $data['fullName'];
-                    $id = $data['user_id'];
-                    setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
+                    if ($_POST['stocker'] > 0) {
+                        $id = $data['user_id'];
+                        setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
+                    }
                     // $_COOKIE['id'] = $data['user_id'];
                 } else {
                     // Wrong password
