@@ -54,7 +54,7 @@
                     </div>
                     <div class="mb-3 d-flex flex-wrap justify-content-between">
                         <div class="form-check mb-2">
-                            <input class="form-check-input" type="checkbox" id="si-remember" id="checkLabel">
+                            <input class="form-check-input" type="checkbox" id="si-remember">
                             <label class="form-check-label" for="si-remember">Se
                                 souvenir</label>
 
@@ -72,8 +72,8 @@
                         var password = $('#si-password').val();
                         var signin = $('#signin').val();
                         var csrf = $('#csrf_token').val();
-                        var souv = $('#checkLabel').val();
-                        console.log(csrf);
+                        var souv = $('#si-remember:checkbox:checked').length;
+                        console.log(souv);
                         $.ajax({
                             url: '../private/controllers/Signin-up_Validation.php',
                             method: 'POST',
@@ -81,7 +81,8 @@
                             data: {
                                 'email': email,
                                 'password': password,
-                                'signin': signin
+                                'signin': signin,
+                                'stocker': souv
                             },
                             success: function(response) {
                                 var result = eval(response);
