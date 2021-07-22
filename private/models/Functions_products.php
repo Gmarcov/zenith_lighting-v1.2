@@ -140,13 +140,18 @@ function quickView($con, $query)
                     <div class="col-lg-7 pe-lg-0">
                         <div class="product-gallery">
                             <div class="product-gallery-preview order-sm-2">
+                                <!-- First Item -->
+                                <div class="product-gallery-preview-item active" id="<?php echo 'image' . 0; ?>"><img
+                                        class="image-zoom" src="<?php echo $images[0]; ?>"
+                                        data-zoom="<?php echo $images[0]; ?>" alt="Product image">
+                                    <div class="image-zoom-pane"></div>
+                                </div>
                                 <?php
-$i = 0;
+$i = 1;
             while ($i < count($images)) {
                 ?>
-                                <div class="product-gallery-preview-item active"
-                                    id="<?php echo 'image' . $images[$i]; ?>">
-                                    <img class="image-zoom" src="<?php echo $images[$i]; ?>"
+                                <div class="product-gallery-preview-item" id="<?php echo 'image' . $i; ?>"><img
+                                        class="image-zoom" src="<?php echo $images[$i]; ?>"
                                         data-zoom="<?php echo $images[$i]; ?>" alt="Product image">
                                     <div class="image-zoom-pane"></div>
                                 </div>
@@ -155,20 +160,21 @@ $i = $i + 1;
             }
             ?>
                             </div>
-                            <?php
+
+
+                            <div class="product-gallery-thumblist order-sm-1">
+                                <?php
 $i = 0;
             while ($i < count($images)) {
                 ?>
-                            <div class="product-gallery-thumblist order-sm-1">
                                 <a class="product-gallery-thumblist-item active"
-                                    href="#<?php echo 'image' . $images[$i]; ?>"><img src="<?php echo $images[$i]; ?>"
+                                    href="#<?php echo 'image' . $i; ?>"><img src="<?php echo $images[$i]; ?>"
                                         alt="Product thumb"></a>
-                            </div>
-                            <?php
+                                <?php
 $i = $i + 1;
             }
             ?>
-
+                            </div>
                         </div>
                     </div>
                     <!-- Product details-->
