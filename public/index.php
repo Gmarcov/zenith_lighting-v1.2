@@ -60,8 +60,10 @@ session_start();
     <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
   </noscript>
   <?php
-  require_once('header.php');
+  require_once('./components/quickView.php');
+  require_once('./components/header.php');
   ?>
+
   <!-- Hero (Banners + Slider)-->
   <section class="bg-secondary py-4 pt-md-5">
     <div class="container py-xl-2">
@@ -680,7 +682,7 @@ session_start();
   </main>
   <!-- Footer-->
   <?php
-  require_once('./footer.php');
+  require_once('./components/footer.php');
   ?>
   <!-- Toolbar for handheld devices (Default)-->
   <div class="handheld-toolbar">
