@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['logout'])) {
     setcookie('user_id', '', time() - 3600, '/');
     session_start();

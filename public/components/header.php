@@ -90,7 +90,7 @@
                                                 aria-label="Remove"><span aria-hidden="true">&times;</span></button>
                                             <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
                                                     href="shop-single-v2.html"><img
-                                                        src="../src/img/shop/cart/widget/05.jpg" width="64"
+                                                        src="../src/img/shop/catalog/2.png" width="64"
                                                         alt="Product"></a>
                                                 <div class="ps-2">
                                                     <h6 class="widget-product-title"><a
@@ -106,7 +106,7 @@
                                                 aria-label="Remove"><span aria-hidden="true">&times;</span></button>
                                             <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
                                                     href="shop-single-v2.html"><img
-                                                        src="../src/img/shop/cart/widget/06.jpg" width="64"
+                                                        src="../src/img/shop/catalog/3.png" width="64"
                                                         alt="Product"></a>
                                                 <div class="ps-2">
                                                     <h6 class="widget-product-title"><a href="shop-single-v2.html">Cloud
@@ -122,7 +122,7 @@
                                                 aria-label="Remove"><span aria-hidden="true">&times;</span></button>
                                             <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
                                                     href="shop-single-v2.html"><img
-                                                        src="../src/img/shop/cart/widget/07.jpg" width="64"
+                                                        src="../src/img/shop/catalog/8.png" width="64"
                                                         alt="Product"></a>
                                                 <div class="ps-2">
                                                     <h6 class="widget-product-title"><a
@@ -138,7 +138,7 @@
                                                 aria-label="Remove"><span aria-hidden="true">&times;</span></button>
                                             <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
                                                     href="shop-single-v2.html"><img
-                                                        src="../src/img/shop/cart/widget/08.jpg" width="64"
+                                                        src="../src/img/shop/catalog/6.png" width="64"
                                                         alt="Product"></a>
                                                 <div class="ps-2">
                                                     <h6 class="widget-product-title"><a
@@ -169,7 +169,7 @@
                                             <path
                                                 d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
                                         </svg>
-                                        Passez à l'achat</a>
+                                        Procéder au paiement</a>
                                 </div>
                             </div>
                         </div>
