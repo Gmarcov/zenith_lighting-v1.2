@@ -15,13 +15,14 @@
         <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
             <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
                 <?php
-if (isset($_SESSION['mycart'])) {
+if (!empty($_SESSION['mycart'])) {
     require_once '../private/models/Functions_cart.php';
     if (isset($_SESSION['mycart'])) {
         foreach ($_SESSION['mycart'] as $key => $value) {
             ?>
                 <div class="widget-cart-item py-2 border-bottom">
-                    <button class="btn-close text-danger" type="button" aria-label="Remove"><span
+                    <button class="btn-close text-danger removeFromCart" type="button" aria-label="Remove"
+                        id="<?php echo 'delete' . $_SESSION['mycart'][$key]['prod_id']; ?>"><span
                             aria-hidden="true">&times;</span></button>
                     <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
                             href="shop-single-v2.html"><img src="<?php echo $_SESSION['mycart'][$key]['img'] ?>"

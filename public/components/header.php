@@ -50,7 +50,7 @@ require_once 'login.php';
                         <?php
 if (isset($_SESSION['name'])) {
     $name = $_SESSION['name'];
-    $link = '#';
+    $link = './account.php';
 } else {
     $name = 'Identifiez-vous';
     $link = '#signin-modal';

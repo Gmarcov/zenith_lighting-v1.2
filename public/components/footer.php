@@ -180,3 +180,59 @@
             </div>
         </div>
 </footer>
+<script>
+// $(document).ready(function() {
+$('.addToCart').on('click', function(event) {
+    event.preventDefault();
+    var id = $(this).attr("id");
+    var img = $('#imgCart' + id).attr("src");
+    var name = $('#nameCart' + id).val();
+    var qty = $('#qty' + id + '').val();
+    var price = $('#price' + id + '').val();
+    var action = 'addToCart';
+    // console.log(price);
+    $.ajax({
+        url: '../private/controllers/Cart.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            'prod_id': id,
+            'img': img,
+            'name': name,
+            'price': price,
+            'qty': qty,
+            'action': action
+        },
+        success: function(response) {
+            var result = eval(response);
+            // console.log(result);
+            // console.log(location.href + '#shoppingCart');
+            $("#shoppingCart").load(location.href + ' #shoppingCart');
+        }
+    })
+})
+$('.removeFromCart').on('click', function(event) {
+    event.preventDefault();
+    var removeId = $(this).attr("id");
+    var id = parseInt(removeId.replace('delete', ''));
+    var action = 'reomoveFromCart';
+    console.log(id);
+    $.ajax({
+        url: '../private/controllers/Cart.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            'prod_id': id,
+            'action': action
+        },
+        success: function(response) {
+            var result = eval(response);
+            // console.log(result);
+            // console.log(location.href + '#shoppingCart');
+            $("#shoppingCart").load(location.href + ' #shoppingCart');
+            // location.reload();
+        }
+    })
+})
+// })
+</script>

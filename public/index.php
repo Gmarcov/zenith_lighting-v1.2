@@ -4,7 +4,7 @@ session_start();
 // unset($_SESSION['name']);
 // unset($_SESSION['user_id']);
 // unset($_SESSION['mycart']);
-?>
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,8 +67,6 @@ session_start();
 require_once './components/quickView.php';
 require_once './components/header.php';
 ?>
-
-
     <!-- Hero (Banners + Slider)-->
     <!-- <main> -->
     <section class="bg-secondary py-4 pt-md-5">
