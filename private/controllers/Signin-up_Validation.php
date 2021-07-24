@@ -2,17 +2,18 @@
 session_start();
 require_once "../models/Database_Connection.php";
 require_once "../models/Functions_users.php";
+require_once "../models/Functions_cart.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];
     if (isset($_POST['signin'])) { // Signin
-        // Get post infos 
+        // Get post infos
         $email = $_POST['email'];
         $password = $_POST['password'];
 
         // Hundle user input
         if (!isset($_POST['email']) || strlen($_POST['email']) > 400 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // Hundle email errors
-            $errors[] =  "Invalid email entered";
+            $errors[] = "Invalid email entered";
         } else if (!checkdnsrr(substr($_POST['email'], strpos($_POST['email'], '@') + 1), 'MX')) { // Check dns of the email
             $errors[] = "Invalid email DNS";
         }
@@ -29,6 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Stocker name dans une session
                     // Stocker id dans un cookie pour la connexion automatique
                     $_SESSION['name'] = $data['fullName'];
+                    $_SESSION['user_id'] = $data['user_id'];
+                    $cart = fetch_cart_id($con, 'SELECT * FROM cart WHERE user_id=?', $data['user_id']);
+                    if (!empty($cart)) {
+                        $_SESSION['mycart'] = $cart;
+                    }
                     if ($_POST['stocker'] > 0) {
                         $id = $data['user_id'];
                         setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
@@ -54,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $errors[] = "Invalid name entered. (Only use letters, spaces and hyphens)";
         }
         if (!isset($_POST['email']) || strlen($_POST['email']) > 400 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // Hundle email errors
-            $errors[] =  "Invalid email entered";
+            $errors[] = "Invalid email entered";
         } else if (!checkdnsrr(substr($_POST['email'], strpos($_POST['email'], '@') + 1), 'MX')) { // Check dns of th email
             $errors[] = "Invalid email DNS";
         }
