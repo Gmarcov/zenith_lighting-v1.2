@@ -27,7 +27,9 @@ function fetch_all_products($con, $query)
             // print_r($images);
             ?>
 <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
-    <div class="card product-card">
+    <!-- /////////////////////////Id Product//////////////////////// -->
+    <input type="hidden" value="<?php echo $data['product_id'] ?>" id="prod_id">
+    <div class=" card product-card">
         <div class="product-card-actions d-flex align-items-center">
             <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left"
                 title="Ajouter à ma liste">
@@ -38,9 +40,11 @@ function fetch_all_products($con, $query)
                 </svg>
             </button>
         </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img
-                src="<?php echo $images[0]; ?>" alt="Product"></a>
+                src="<?php echo $images[0]; ?>" alt="Product" id="<?php echo 'imgCart' . $data['product_id']; ?>"></a>
         <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1"
-                href="#"><?php echo $data['product_name']; ?></a>
+                href="#"><?php echo $data['product_name']; ?> <input type="hidden"
+                    value="<?php echo $data['product_name']; ?>" id="<?php echo 'nameCart' . $data['product_id']; ?>">
+            </a>
             <h3 class="product-title fs-sm"><a href="shop-single-v2.html"><?php echo $data['Categorie']; ?></a>
             </h3>
             <div class="d-flex justify-content-between">
@@ -49,6 +53,8 @@ function fetch_all_products($con, $query)
             $whole = floor($n); // 1
             $fraction = $n - $whole; // .25
             echo '$' . $whole;?>.<small><?php echo $fraction; ?></small></span>
+                    <input type="hidden" value="<?php echo $data['price'] ?>"
+                        id="<?php echo 'price' . $data['product_id']; ?>">
                 </div>
                 <div class="star-rating">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
@@ -80,7 +86,8 @@ function fetch_all_products($con, $query)
             </div>
         </div>
         <div class="card-body card-body-hidden">
-            <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button">
+            <button class="btn btn-primary btn-sm d-block w-100 mb-2 addToCart" type="button"
+                id="<?php echo $data['product_id']; ?>">
                 Ajouter au panier
             </button>
             <div class="text-center"><a class="nav-link-style fs-ms"
@@ -99,6 +106,8 @@ function fetch_all_products($con, $query)
     </div>
     <hr class="d-sm-none">
 </div>
+
+
 <?php
 
         }
@@ -120,7 +129,9 @@ function quickView($con, $query)
             ?>
 <div class="modal-quick-view modal fade" id="<?php echo 'quickView' . $data['product_id'] . $data['product_name']; ?>"
     tabindex="-1">
-    <div class="modal-dialog modal-xl">
+    <!-- /////////////////////////Id Product//////////////////////// -->
+    <input type="hidden" value="<?php echo $data['product_id'] ?>">
+    <div class=" modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title product-title"><a href="shop-single-v2.html" data-bs-toggle="tooltip"
@@ -258,16 +269,16 @@ $i = $i + 1;
                                 </div>
                             </div>
                             <div class="d-flex align-items-center pt-2 pb-4">
-                                <select class="form-select me-3" style="width: 5rem;">
+                                <select class="form-select me-3" style="width: 5rem;"
+                                    id="<?php echo 'qty' . $data['product_id']; ?>">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <button class="btn btn-primary btn-shadow d-block w-100" type="button">Ajouter
-                                    au
-                                    panier</button>
+                                <button class="btn btn-primary btn-shadow d-block w-100 addToCart" type="button"
+                                    id="<?php echo $data['product_id'] ?>">Ajouter au panier</button>
                             </div>
                             <div class="d-flex mb-4">
                                 <div class="w-100 me-3">

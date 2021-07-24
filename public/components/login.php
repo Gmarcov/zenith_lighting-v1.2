@@ -1,5 +1,4 @@
 <!-- Sign in / sign up modal-->
-
 <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -27,19 +26,19 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body tab-content py-4">
-                <form action="../private/controllers/Signin-up_Validation.php" method="POST"
-                    class="needs-validation tab-pane fade show active" autocomplete="off" novalidate id="signin-tab">
+                <form class="needs-validation tab-pane fade show active" method="POST" autocomplete="off" novalidate
+                    id="signin-tab">
                     <span id="result-in"></span>
                     <div class="mb-3">
                         <label class="form-label" for="si-email">Address email</label>
                         <input class="form-control" type="email" id="si-email" placeholder="johndoe@example.com"
-                            required>
+                            name="email" required>
                         <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="si-password">Mot de passe</label>
                         <div class="password-toggle">
-                            <input class="form-control" type="password" id="si-password" required>
+                            <input class="form-control" type="password" id="si-password" required name="password">
                             <label class="password-toggle-btn" aria-label="Show/hide password">
                                 <input class="password-toggle-check" type="checkbox">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -73,7 +72,7 @@
                         var signin = $('#signin').val();
                         var csrf = $('#csrf_token').val();
                         var souv = $('#si-remember:checkbox:checked').length;
-                        console.log(souv);
+                        // console.log(souv);
                         $.ajax({
                             url: '../private/controllers/Signin-up_Validation.php',
                             method: 'POST',
