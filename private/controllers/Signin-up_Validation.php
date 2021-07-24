@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get post infos 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        echo $password . "<br>";
 
         // Hundle user input
         if (!isset($_POST['email']) || strlen($_POST['email']) > 400 || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) { // Hundle email errors
@@ -21,25 +20,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Check if user exists
             $con = connect();
             $result = user_exist($con, "SELECT * FROM tutilisateurs WHERE user_email=?", $email);
-            print_r($result);
             if ($result && $result->num_rows != 0) {
                 // check if password match
                 $hash = password_hash($password, PASSWORD_DEFAULT);
                 $data = $result->fetch_assoc();
                 if (password_verify($password, $data['user_password'])) {
-                    $errors = "User signed in";
+                    // Authentication succeded
                     // Stocker name dans une session
                     // Stocker id dans un cookie pour la connexion automatique
                     $_SESSION['name'] = $data['fullName'];
-                    $id = $data['user_id'];
-                    setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
+                    if ($_POST['stocker'] > 0) {
+                        $id = $data['user_id'];
+                        setcookie('user_id', $id, time() + 3600 * 24 * 365, '/');
+                    }
                     // $_COOKIE['id'] = $data['user_id'];
                 } else {
-                    // Authentication succeded
+                    // Wrong password
                     $errors[] = "Wrong password!! Try again";
                 }
             } else {
-                $errors[] = "No user with the this email : $email";
+                $errors[] = "No registred user with the this email or password";
             }
         }
     } elseif (isset($_POST['signup'])) { // Sign up
@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fullName = $_POST['fullName'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+
         // Validate infos
         if (!isset($_POST['fullName']) || strlen($_POST['fullName']) > 400 || !preg_match('/^[a-zA-Z- ]+$/', $_POST['fullName'])) { // Hundle fullName errors
             $errors[] = "Invalid name entered. (Only use letters, spaces and hyphens)";
@@ -91,8 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
     }
-    $_SESSION['signup'] = $errors;
-    header('Location: ../../public/login.html.php');
+    echo json_encode($errors);
 } elseif (isset($_COOKIE['user_id'])) {
     // Connexion automatique
     $con = connect();
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Stocker le nom dans une session plus redirection
         $data = $result->fetch_assoc();
         $_SESSION['name'] = $data['fullName'];
-        header('Location: ../../public/login.html.php');
+        header('Location: ../../public/index.php');
     }
 } else {
     header('Location: ../../index.php');
