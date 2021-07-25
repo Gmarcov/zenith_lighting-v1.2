@@ -1,6 +1,19 @@
 <div class="navbar-tool dropdown ms-3" id="shoppingCart">
+    <?php
+
+if (isset($_SESSION['mycart'])) {
+
+    $total = 0;
+
+    $nbItems = count($_SESSION['mycart']);
+} else {
+    $nbItems = 0;
+    $total = 0;
+}
+
+?>
     <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="shop-cart.html">
-        <span class="navbar-tool-label">4</span>
+        <span class="navbar-tool-label"><?php echo $nbItems; ?></span>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-cart2 navbar-tool-icon" viewBox="0 0 16 16">
             <path
@@ -25,29 +38,27 @@ if (!empty($_SESSION['mycart'])) {
                         id="<?php echo 'delete' . $_SESSION['mycart'][$key]['prod_id']; ?>"><span
                             aria-hidden="true">&times;</span></button>
                     <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
-                            href="shop-single-v2.html"><img src="<?php echo $_SESSION['mycart'][$key]['img'] ?>"
+                            href="shop-single-v2.html"><img src="<?php echo $_SESSION['mycart'][$key]['img']; ?>"
                                 width="64" alt="Product"></a>
                         <div class="ps-2">
                             <h6 class="widget-product-title"><a
-                                    href="shop-single-v2.html"><?php echo $_SESSION['mycart'][$key]['name'] ?></a></h6>
+                                    href="shop-single-v2.html"><?php echo $_SESSION['mycart'][$key]['name']; ?></a></h6>
                             <div class="widget-product-meta"><span class="text-accent me-2">
                                     <?php $n = floatval($_SESSION['mycart'][$key]['price']);
-            $whole = floor($n); // 1
-            $fraction = $n - $whole; // .25
+            $whole = floor($n);
+            $fraction = $n - $whole;
             echo '$' . $whole;?>.<small><?php echo $fraction ?></small></span><span class="text-muted">x
                                     <?php echo $_SESSION['mycart'][$key]['qty'] ?></span></div>
                         </div>
                     </div>
                 </div>
                 <?php
-
-        }
+}
     }
 } else {
     echo "<div class=\"widget-cart-item py-2 border-bottom\"> Panier Vide</div>";
 }
 ?>
-
             </div>
             <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
                 <div class="fs-sm me-2 py-2"><span class="text-muted">Total:</span><span
@@ -60,13 +71,15 @@ if (!empty($_SESSION['mycart'])) {
                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg>
                 </a>
-            </div><a class="btn btn-primary btn-sm d-block w-100" href="checkout-details.html">
+            </div>
+            <a class="btn btn-primary btn-sm d-block w-100" href="checkout-details.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-wallet2 me-2 fs-base align-middle" viewBox="0 0 16 16">
                     <path
                         d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
                 </svg>
-                Procéder au paiement</a>
+                Procéder au paiement
+            </a>
         </div>
     </div>
 </div>

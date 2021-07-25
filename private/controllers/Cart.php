@@ -65,6 +65,5 @@ if (isset($_POST['prod_id'])) {
             }
         }
     }
-
     echo json_encode($_SESSION['mycart']);
 }

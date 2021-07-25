@@ -42,10 +42,10 @@ function fetch_all_products($con, $query)
         </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img
                 src="<?php echo $images[0]; ?>" alt="Product" id="<?php echo 'imgCart' . $data['product_id']; ?>"></a>
         <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1"
-                href="#"><?php echo $data['product_name']; ?> <input type="hidden"
+                href="#"><?php echo $data['Categorie']; ?><input type="hidden"
                     value="<?php echo $data['product_name']; ?>" id="<?php echo 'nameCart' . $data['product_id']; ?>">
             </a>
-            <h3 class="product-title fs-sm"><a href="shop-single-v2.html"><?php echo $data['Categorie']; ?></a>
+            <h3 class="product-title fs-sm"><a href="shop-single-v2.html"><?php echo $data['product_name']; ?> </a>
             </h3>
             <div class="d-flex justify-content-between">
                 <div class="product-price"><span class="text-accent">
@@ -135,8 +135,7 @@ function quickView($con, $query)
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title product-title"><a href="shop-single-v2.html" data-bs-toggle="tooltip"
-                        data-bs-placement="right"
-                        title="Allez à la page du produit"><?php echo $data['product_name']; ?>
+                        data-bs-placement="right" title="Allez à la page du produit"><?php echo $data['Categorie']; ?>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-chevron-right fs-lg ms-2" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -319,6 +318,22 @@ echo $data['prod_Desc'];
 <?php
 
         }
+    }
+    $stmt->close();
+    return false;
+}
+
+function fetch_product_by_id($con, $query, $id)
+{
+    $stmt = $con->prepare($query);
+    $images = [];
+    $stmt->bind_param('i', $id);
+    if ($stmt->execute()) {
+        $res = $stmt->get_result();
+        while ($data = $res->fetch_assoc()) {
+            $images[] = $data['image_url'];
+        }
+        return $images;
     }
     $stmt->close();
     return false;

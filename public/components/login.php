@@ -72,7 +72,6 @@
                         var signin = $('#signin').val();
                         var csrf = $('#csrf_token').val();
                         var souv = $('#si-remember:checkbox:checked').length;
-                        // console.log(souv);
                         $.ajax({
                             url: '../private/controllers/Signin-up_Validation.php',
                             method: 'POST',
