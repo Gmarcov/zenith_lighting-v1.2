@@ -4,7 +4,7 @@ session_start();
 // unset($_SESSION['name']);
 // unset($_SESSION['user_id']);
 // unset($_SESSION['mycart']);
-// ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -253,48 +253,6 @@ require_once './components/product.php';
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-              </div>
-              <div class="card-body card-body-hidden">
-                <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button">
-                  Ajouter au panier
-                </button>
-                <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view-electro" data-bs-toggle="modal">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-eye align-middle me-1" viewBox="0 0 16 16">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                  </svg>  
-                  Details</a>
-                </div>
-              </div>
-            </div>
-            <hr class="d-sm-none">
-          </div>
-          <!-- Product-->
-          <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
-            <div class="card product-card"><span class="badge bg-danger badge-shadow">Promo</span>
-              <div class="product-card-actions d-flex align-items-center"><a class="btn-action nav-link-style me-2" href="#"><i class="ci-compare me-1"></i>Compare</a>
-                <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button>
-              </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img src="../src/img/shop/catalog/59.jpg" alt="Product"></a>
-              <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Computers</a>
-                <h3 class="product-title fs-sm"><a href="shop-single-v2.html">AirPort Extreme Base Station</a></h3>
-                <div class="d-flex justify-content-between">
-                  <div class="product-price"><span class="text-accent">$98.<small>50</small></span>
-                    <del class="fs-sm text-muted">$149.<small>99</small></del>
-                  </div>
-                  <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star"></i>
-=======
-              </a><a class="d-flex align-items-center bg-faded-warning rounded-3 pt-2 ps-2 mb-4 me-4 me-xl-0" href="#" style="min-width: 16rem;"><img src="../src/img/home/banners/banner-sm05.png" width="125" alt="Banner">
-                <div class="py-4 px-2">
-                  <h5 class="mb-2"><span class="fw-light">Top Rated</span><br>Gadgets<br><span class="fw-light">are on </span>Sale</h5>
-                  <div class="text-warning fs-sm">Acheter
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right fs-xs ms-1" viewBox="0 0 16 16">
-                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                    </svg>
->>>>>>> a687c1c3b295c742ff7450eb9762d669422e2571
-                  </div>
-=======
             </section>
             <!-- Brands carousel-->
             <section class="container mb-5">
@@ -326,7 +284,6 @@ require_once './components/product.php';
                                 style="margin-right: -.0625rem;"><img class="d-block mx-auto"
                                     src="../src/img/shop/brands/20.png" style="width: 165px;" alt="Brand"></a></div>
                     </div>
->>>>>>> 0dc7a47755c38e25f5b30f1062d86e97a6a80cab
                 </div>
             </section>
 
@@ -589,217 +546,6 @@ require_once './components/footer.php';
                         </span>
                         <span class="handheld-toolbar-label">Dh265.00</span></a>
                 </div>
-<<<<<<< HEAD
-              </a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Products grid (Trending products)-->
-  <section class="container pt-5">
-    <!-- Heading-->
-    <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-4 mb-4">
-      <h2 class="h3 mb-0 pt-3 me-2">Bons Plans</h2>
-      <div class="pt-3"><a class="btn btn-outline-accent btn-sm" href="shop-grid-ls.html">Tout afficher
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right ms-1 me-n1" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-          </svg>
-        </a></div>
-    </div>
-    <!-- Grid-->
-    <div class="row pt-2 mx-n2">
-      
-    <!-- Product-->
-    <?php
-      require_once './components/product.php';
-    ?>
-  <!-- Promo banner-->
-  <section class="container mt-4 mb-grid-gutter">
-    <div class="bg-faded-info rounded-3 py-4">
-      <div class="row align-items-center">
-        <div class="col-md-5">
-          <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Offre limité</span>
-            <h3 class="mt-4 mb-1 text-body fw-light">Toute Nouvelle</h3>
-            <h2 class="mb-1">Lamp de Lux</h2>
-            <p class="h5 text-body fw-light">avec un prix imbattable. A ne pas ratez!</p>
-            <div class="countdown py-2 h4" data-countdown="07/01/2021 07:00:00 PM">
-              <div class="countdown-days"><span class="countdown-value">13</span><span class="countdown-label text-muted">j</span></div>
-              <div class="countdown-hours"><span class="countdown-value">2</span><span class="countdown-label text-muted">h</span></div>
-              <div class="countdown-minutes"><span class="countdown-value">45</span><span class="countdown-label text-muted">m</span></div>
-              <div class="countdown-seconds"><span class="countdown-value">10</span><span class="countdown-label text-muted">s</span></div>
-            </div><a class="btn btn-accent" href="#">Voir l'offre
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right fs-ms ms-1" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-7"><img src="../src/img/home/banners/offer1.png" alt="iPad Pro Offer"></div>
-      </div>
-    </div>
-  </section>
-  <!-- Brands carousel-->
-  <section class="container mb-5">
-    <div class="tns-carousel border-end">
-      <div class="tns-carousel-inner" data-carousel-options="{ &quot;nav&quot;: false, &quot;controls&quot;: false, &quot;autoplay&quot;: true, &quot;autoplayTimeout&quot;: 4000, &quot;loop&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;360&quot;:{&quot;items&quot;:2},&quot;600&quot;:{&quot;items&quot;:3},&quot;991&quot;:{&quot;items&quot;:4},&quot;1200&quot;:{&quot;items&quot;:4}} }">
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/13.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/14.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/17.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/16.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/15.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/18.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/19.png" style="width: 165px;" alt="Brand"></a></div>
-        <div><a class="d-block bg-white border py-4 py-sm-5 px-2" href="#" style="margin-right: -.0625rem;"><img class="d-block mx-auto" src="../src/img/shop/brands/20.png" style="width: 165px;" alt="Brand"></a></div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Product widgets -->
-  <section class="container pb-4 pb-md-5">
-    <div class="row">
-      <!-- Bestsellers -->
-      <div class="col-md-4 col-sm-6 mb-2 py-3">
-        <div class="widget">
-          <h3 class="widget-title">Meilleur Vente</h3>
-          <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/6.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Wireless Bluetooth
-                  Headphones</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$259.<small>00</small></span>
-              </div>
-            </div>
-          </div>
-<<<<<<< HEAD
-          <!-- Product-->
-          <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
-            <div class="card product-card"><span class="badge bg-info badge-shadow">Nouveau</span>
-              <div class="product-card-actions d-flex align-items-center"><a class="btn-action nav-link-style me-2" href="#"><i class="ci-compare me-1"></i>Compare</a>
-                <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button>
-              </div><a class="card-img-top d-block overflow-hidden" href="shop-single-v2.html"><img src="../src/img/shop/catalog/64.jpg" alt="Product"></a>
-              <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Wearable Electronics</a>
-                <h3 class="product-title fs-sm"><a href="shop-single-v2.html">Smart Watch Series 5, Aluminium</a></h3>
-                <div class="d-flex justify-content-between">
-                  <div class="product-price"><span class="text-accent">$349.<small>99</small></span></div>
-                  <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-half active"></i><i class="star-rating-icon ci-star"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body card-body-hidden">
-                <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="ci-cart fs-sm me-1"></i>Add to Cart</button>
-                <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view-electro" data-bs-toggle="modal"><i class="ci-eye align-middle me-1"></i>Quick view</a></div>
-=======
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/2.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Cloud Security Camera</a>
-              </h6>
-              <div class="widget-product-meta"><span class="text-accent">$122.<small>00</small></span>
->>>>>>> a687c1c3b295c742ff7450eb9762d669422e2571
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/7.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Android Smartphone S10</a>
-              </h6>
-              <div class="widget-product-meta"><span class="text-accent">$799.<small>00</small></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/5.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Android Smart TV Box</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$67.<small>00</small></span>
-                <del class="text-muted fs-xs">$90.<small>43</small></del>
-              </div>
-            </div>
-          </div>
-          <a class="fs-sm" href="shop-grid-ls.html">Voir plus
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-chevron-right fs-xs ms-1" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-          </a>
-        </div>
-      </div>
-      <!-- New arrivals -->
-      <div class="col-md-4 col-sm-6 mb-2 py-3">
-        <div class="widget">
-          <h3 class="widget-title">Nouvelle arrivées</h3>
-          <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/3.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Monoblock Desktop PC</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$1,949.<small>00</small></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/4.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Laserjet Printer
-                  All-in-One</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$428.<small>60</small></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/2.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Console Controller
-                  Charger</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$14.<small>97</small></span>
-                <del class="text-muted fs-xs">$16.<small>47</small></del>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/1.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Smart Watch Series 5,
-                  Aluminium</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$349.<small>99</small></span>
-              </div>
-            </div>
-          </div>
-          <a class="fs-sm" href="shop-grid-ls.html">Voir plus
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-chevron-right fs-xs ms-1" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-          </a>
-        </div>
-      </div>
-      <!-- Top rated -->
-      <div class="col-md-4 col-sm-6 mb-2 py-3">
-        <div class="widget">
-          <h3 class="widget-title">Nos recommendation</h3>
-          <div class="d-flex align-items-center pb-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/8.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Android Smartphone S9</a>
-              </h6>
-              <div class="widget-product-meta"><span class="text-accent">$749.<small>99</small></span>
-                <del class="text-muted fs-xs">$859.<small>99</small></del>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/6.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Wireless Bluetooth
-                  Headphones</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$428.<small>60</small></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2 border-bottom"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/7.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">360 Degrees Camera</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$98.<small>75</small></span>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center py-2"><a class="d-block flex-shrink-0" href="shop-single-v2.html"><img src="../src/img/shop/catalog/5.png" width="64" alt="Product"></a>
-            <div class="ps-2">
-              <h6 class="widget-product-title"><a href="shop-single-v2.html">Digital Camera 40MP</a></h6>
-              <div class="widget-product-meta"><span class="text-accent">$210.<small>00</small></span>
-                <del class="text-muted fs-xs">$249.<small>00</small></del>
-              </div>
-=======
->>>>>>> 0dc7a47755c38e25f5b30f1062d86e97a6a80cab
             </div>
             <!-- Back To Top Button-->
             <a class="btn-scroll-top" href="#top" data-scroll><span

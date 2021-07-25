@@ -25,23 +25,22 @@ if (!empty($_SESSION['mycart'])) {
                         id="<?php echo 'delete' . $_SESSION['mycart'][$key]['prod_id']; ?>"><span
                             aria-hidden="true">&times;</span></button>
                     <div class="d-flex align-items-center"><a class="d-block flex-shrink-0"
-                            href="shop-single-v2.html"><img src="<?php echo $_SESSION['mycart'][$key]['img'] ?>"
+                            href="shop-single-v2.html"><img src="<?php echo $_SESSION['mycart'][$key]['img']; ?>"
                                 width="64" alt="Product"></a>
                         <div class="ps-2">
                             <h6 class="widget-product-title"><a
-                                    href="shop-single-v2.html"><?php echo $_SESSION['mycart'][$key]['name'] ?></a></h6>
+                                    href="shop-single-v2.html"><?php echo $_SESSION['mycart'][$key]['name']; ?></a></h6>
                             <div class="widget-product-meta"><span class="text-accent me-2">
                                     <?php $n = floatval($_SESSION['mycart'][$key]['price']);
-            $whole = floor($n); // 1
-            $fraction = $n - $whole; // .25
+            $whole = floor($n);
+            $fraction = $n - $whole;
             echo '$' . $whole;?>.<small><?php echo $fraction ?></small></span><span class="text-muted">x
                                     <?php echo $_SESSION['mycart'][$key]['qty'] ?></span></div>
                         </div>
                     </div>
                 </div>
                 <?php
-
-        }
+}
     }
 } else {
     echo "<div class=\"widget-cart-item py-2 border-bottom\"> Panier Vide</div>";
