@@ -1,0 +1,134 @@
+/* NavBar CSS */
+
+/* Logo */
+
+.header-Logo {
+  padding-left: 20px;
+  height: 40px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header-Logo{
+    padding-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+    .header-Logo{
+        padding-left: 10%;
+    }
+}
+
+/* Search */
+
+.search-navbar {
+  position: relative;
+}
+
+.bi-search {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.form-input {
+  border: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) !important;
+  padding-left: 40px;
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    display: none;
+  }
+}
+
+/* Account */
+
+.bi-person-fill {
+  margin-right: 15px;
+}
+
+/* Cart */
+
+.cart {
+  position: relative;
+}
+
+.cart span{
+  cursor: pointer;
+}
+
+.bi-bag {
+  margin-right: 20px;
+}
+
+.cart-number {
+  width: 15px;
+  position: absolute;
+  left: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgb(255, 208, 0);
+  border-radius: 100%;
+  text-align: center;
+}
+
+.cart-dropdown{
+  transform: translateX(-70px);
+  padding: 5% 0 5% 0;
+  text-align: center;
+}
+
+.bi-person-fill:hover,
+.bi-bag :hover {
+  fill: black;
+}
+
+@media screen and (max-width : 600px){
+    .container-fluid{
+        display: inline;
+        flex: auto;
+        float: right;
+    }
+
+    .navbar-Icon{
+        margin-left: 0px;
+        display: inline;
+        white-space: nowrap;
+        float: right;
+    }
+    .navbar-Icon .nav-item{
+        display: inline;
+        list-style-type: none;
+        float: right;
+    }
+    .bi-bag{
+        margin-right: 15px!important;
+    }
+    .bi-person-fill{
+        margin-right: 5px !important;
+    }
+}
+
+/* Bot Navbar */
+
+.bot-nav{
+  background-color: #f8f8f8 !important;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.15) !important;
+}
+
+.bot-nav-Categorie{
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.bot-nav li{
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(29, 29, 29) !important;
+}
+
+.bot-nav-div .nav-link{
+  padding: 0 40px 0 20px;
+}
